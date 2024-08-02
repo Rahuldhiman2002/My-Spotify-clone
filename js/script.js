@@ -19,7 +19,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getsongs(folder) {
   currfolder = folder;
-  let a = await fetch(`https://rahuldhiman2002.github.io/My-Spotify-clone/${folder}/`);
+  let a = await fetch(`/${folder}/`);
   console.log(currfolder);
   let response = await a.text();
   let div = document.createElement("div");
@@ -29,7 +29,7 @@ async function getsongs(folder) {
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href.split(`https://rahuldhiman2002.github.io/My-Spotify-clone/${folder}/`)[1]);
+      songs.push(element.href.split(`/${folder}/`)[1]);
     }
   }   
   
@@ -61,7 +61,7 @@ Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEa
 }
 
 const playMusic = (track, pause = false) => {
-  currentSong.src = `https://rahuldhiman2002.github.io/My-Spotify-clone/${currfolder}/` + track;
+  currentSong.src = `/${currfolder}/` + track;
   if (!pause) {
     currentSong.play();
     play.src = "img/pause.svg";
