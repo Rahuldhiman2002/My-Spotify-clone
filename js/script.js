@@ -74,7 +74,7 @@ const playMusic = (track, pause = false) => {
 
 async function main() {
   //get the list of all the songs
-  await getsongs("https://rahuldhiman2002.github.io/My-Spotify-clone/songs/ncs");
+  await getsongs(songs/ncs");
   playMusic(songs[0], true);
 
 
