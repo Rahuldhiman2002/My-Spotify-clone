@@ -19,7 +19,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getsongs(folder) {
   currfolder = folder;
-  let a = await fetch(`/${folder}/`);
+  let a = await fetch(`https://rahuldhiman2002.github.io/My-Spotify-clone/${folder}/`);
   console.log(currfolder);
   let response = await a.text();
   let div = document.createElement("div");
@@ -29,7 +29,7 @@ async function getsongs(folder) {
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href.split(`/${folder}/`)[1]);
+      songs.push(element.href.split(`https://rahuldhiman2002.github.io/My-Spotify-clone/${folder}/`)[1]);
     }
   }   
   
@@ -39,7 +39,7 @@ async function getsongs(folder) {
   for (const song of songs) {
     songUL.innerHTML = songUL.innerHTML +`<li> <img class="invert" width="34" src="img/music.svg" alt="">
                     <div class="info">
-                        <div>${song.replaceAll("%20", " ")}</div>
+                        <div>${song?.replaceAll("%20", " ")}</div>
                         <div></div>
                     </div>
                     <div class="playnow">
@@ -61,7 +61,7 @@ Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEa
 }
 
 const playMusic = (track, pause = false) => {
-  currentSong.src = `/${currfolder}/` + track;
+  currentSong.src = `https://rahuldhiman2002.github.io/My-Spotify-clone/${currfolder}/` + track;
   if (!pause) {
     currentSong.play();
     play.src = "img/pause.svg";
