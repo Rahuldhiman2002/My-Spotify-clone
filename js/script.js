@@ -74,7 +74,7 @@ const playMusic = (track, pause = false) => {
 
 async function main() {
   //get the list of all the songs
-  await getsongs(songs/ncs");
+  await getsongs("songs/ncs");
   playMusic(songs[0], true);
 
 
