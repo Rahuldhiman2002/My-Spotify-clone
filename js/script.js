@@ -19,7 +19,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getsongs(folder) {
   currfolder = folder;
-  let a = await fetch(`My-Spotify-clone/${folder}/`);
+  let a = await fetch(`/${folder}/`);
   console.log(currfolder);
   let response = await a.text();
   let div = document.createElement("div");
@@ -74,7 +74,7 @@ const playMusic = (track, pause = false) => {
 
 async function main() {
   //get the list of all the songs
-  await getsongs("songs/ncs");
+  await getsongs("My-Spotify-clone/songs/ncs");
   playMusic(songs[0], true);
 
 
