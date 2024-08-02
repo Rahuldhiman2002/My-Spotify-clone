@@ -142,7 +142,7 @@ async function main() {
     //Load the playlist whenever card is clicked
   Array.from(document.getElementsByClassName("card")).forEach(e => {
     e.addEventListener("click", async (item) => {
-     await getsongs(`/${item.currentTarget.dataset.folder}`);
+     await getsongs(`songs/${item.currentTarget.dataset.folder}`);
     });
   });
 
